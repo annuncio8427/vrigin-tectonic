@@ -1,0 +1,323 @@
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font-sans);color:var(--color-text-primary);background:transparent}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 2rem;border-bottom:0.5px solid var(--color-border-tertiary);background:var(--color-background-primary);position:sticky;top:0;z-index:100}
+.logo{display:flex;align-items:center;gap:10px}
+.logo-icon{width:36px;height:36px;border-radius:8px;background:#1D9E75;display:flex;align-items:center;justify-content:center}
+.logo-icon svg{width:20px;height:20px}
+.logo-text{font-size:15px;font-weight:500;letter-spacing:-0.3px}
+.logo-sub{font-size:11px;color:var(--color-text-secondary);margin-top:1px}
+.nav-links{display:flex;gap:2rem}
+.nav-links a{font-size:13px;color:var(--color-text-secondary);text-decoration:none;cursor:pointer}
+.nav-links a:hover{color:var(--color-text-primary)}
+.nav-cta{background:#1D9E75;color:#fff;border:none;padding:8px 16px;border-radius:var(--border-radius-md);font-size:13px;font-weight:500;cursor:pointer}
+.hero{padding:5rem 2rem 4rem;text-align:center;background:linear-gradient(180deg,var(--color-background-secondary) 0%,var(--color-background-primary) 100%)}
+.hero-badge{display:inline-flex;align-items:center;gap:6px;background:#E1F5EE;color:#0F6E56;font-size:12px;font-weight:500;padding:5px 12px;border-radius:20px;margin-bottom:1.5rem}
+.hero h1{font-size:42px;font-weight:500;line-height:1.2;letter-spacing:-1px;max-width:680px;margin:0 auto 1.25rem}
+.hero h1 span{color:#1D9E75}
+.hero p{font-size:16px;color:var(--color-text-secondary);max-width:540px;margin:0 auto 2rem;line-height:1.7}
+.hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn-primary{background:#1D9E75;color:#fff;border:none;padding:12px 24px;border-radius:var(--border-radius-md);font-size:14px;font-weight:500;cursor:pointer}
+.btn-secondary{background:transparent;color:var(--color-text-primary);border:0.5px solid var(--color-border-secondary);padding:12px 24px;border-radius:var(--border-radius-md);font-size:14px;font-weight:500;cursor:pointer}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--color-border-tertiary);border-top:0.5px solid var(--color-border-tertiary);border-bottom:0.5px solid var(--color-border-tertiary)}
+.stat{background:var(--color-background-primary);padding:1.5rem 2rem;text-align:center}
+.stat-num{font-size:28px;font-weight:500;color:#1D9E75}
+.stat-label{font-size:13px;color:var(--color-text-secondary);margin-top:4px}
+.section{padding:4rem 2rem}
+.section-label{font-size:12px;font-weight:500;color:#1D9E75;text-transform:uppercase;letter-spacing:1px;margin-bottom:0.75rem}
+.section-title{font-size:28px;font-weight:500;letter-spacing:-0.5px;margin-bottom:0.75rem}
+.section-sub{font-size:15px;color:var(--color-text-secondary);line-height:1.7;max-width:520px;margin-bottom:2.5rem}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem}
+.service-card{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:1.5rem;transition:border-color 0.2s}
+.service-card:hover{border-color:var(--color-border-secondary)}
+.service-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:1rem;font-size:18px}
+.service-card h3{font-size:15px;font-weight:500;margin-bottom:0.5rem}
+.service-card p{font-size:13px;color:var(--color-text-secondary);line-height:1.6}
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.why-item{display:flex;gap:12px;align-items:flex-start;padding:1.25rem;background:var(--color-background-secondary);border-radius:var(--border-radius-md)}
+.why-dot{width:8px;height:8px;border-radius:50%;background:#1D9E75;margin-top:6px;flex-shrink:0}
+.why-item h4{font-size:14px;font-weight:500;margin-bottom:4px}
+.why-item p{font-size:13px;color:var(--color-text-secondary);line-height:1.5}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+.visual-block{background:var(--color-background-secondary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:2rem;display:grid;grid-template-columns:1fr 1fr;gap:0.75rem}
+.mini-card{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-md);padding:1rem}
+.mini-card .mc-val{font-size:20px;font-weight:500;color:#1D9E75}
+.mini-card .mc-label{font-size:11px;color:var(--color-text-secondary);margin-top:2px}
+.process-steps{display:flex;flex-direction:column;gap:0;position:relative}
+.step{display:flex;gap:1rem;padding-bottom:2rem;position:relative}
+.step:last-child{padding-bottom:0}
+.step-line{position:absolute;left:15px;top:32px;bottom:0;width:0.5px;background:var(--color-border-tertiary)}
+.step:last-child .step-line{display:none}
+.step-num{width:32px;height:32px;border-radius:50%;border:0.5px solid var(--color-border-secondary);background:var(--color-background-primary);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:500;flex-shrink:0;color:#1D9E75}
+.step-content h4{font-size:14px;font-weight:500;margin-bottom:4px;padding-top:6px}
+.step-content p{font-size:13px;color:var(--color-text-secondary);line-height:1.5}
+.cta-section{background:#0F6E56;padding:4rem 2rem;text-align:center;color:#fff}
+.cta-section h2{font-size:30px;font-weight:500;letter-spacing:-0.5px;margin-bottom:0.75rem;color:#fff}
+.cta-section p{font-size:15px;color:#9FE1CB;margin-bottom:2rem;max-width:480px;margin-left:auto;margin-right:auto}
+.cta-section .btn-white{background:#fff;color:#0F6E56;border:none;padding:12px 28px;border-radius:var(--border-radius-md);font-size:14px;font-weight:500;cursor:pointer}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+.contact-info{display:flex;flex-direction:column;gap:1rem}
+.contact-item{display:flex;gap:12px;align-items:flex-start}
+.contact-icon{width:36px;height:36px;background:#E1F5EE;border-radius:var(--border-radius-md);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:15px}
+.contact-item h4{font-size:13px;font-weight:500;margin-bottom:2px}
+.contact-item p{font-size:13px;color:var(--color-text-secondary)}
+.form-area{background:var(--color-background-secondary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:1.5rem}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;margin-bottom:0.75rem}
+.form-area input,.form-area textarea,.form-area select{width:100%;background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-md);padding:10px 12px;font-size:13px;color:var(--color-text-primary);font-family:var(--font-sans);outline:none;margin-bottom:0.75rem}
+.form-area textarea{height:90px;resize:none}
+.form-area input:focus,.form-area textarea:focus{border-color:#1D9E75}
+.footer{background:var(--color-background-secondary);border-top:0.5px solid var(--color-border-tertiary);padding:2rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.footer p{font-size:12px;color:var(--color-text-secondary)}
+.footer-links{display:flex;gap:1.5rem}
+.footer-links a{font-size:12px;color:var(--color-text-secondary);text-decoration:none}
+.bg-alt{background:var(--color-background-secondary)}
+.tag{display:inline-block;background:#E1F5EE;color:#0F6E56;font-size:11px;font-weight:500;padding:3px 8px;border-radius:4px;margin-bottom:0.5rem}
+</style>
+
+<nav class="nav">
+  <div class="logo">
+    <div class="logo-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round">
+        <polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5"/>
+        <line x1="12" y1="2" x2="12" y2="22"/>
+        <line x1="2" y1="8.5" x2="22" y2="8.5"/>
+      </svg>
+    </div>
+    <div>
+      <div class="logo-text">Virgin Techtonic Systems</div>
+      <div class="logo-sub">Engineering the Future</div>
+    </div>
+  </div>
+  <div class="nav-links">
+    <a onclick="scroll('services')">Services</a>
+    <a onclick="scroll('about')">About</a>
+    <a onclick="scroll('process')">Process</a>
+    <a onclick="scroll('contact')">Contact</a>
+  </div>
+  <button class="nav-cta" onclick="scrollTo('contact')">Get a Quote</button>
+</nav>
+
+<section class="hero">
+  <div class="hero-badge">
+    <svg width="10" height="10" viewBox="0 0 10 10" fill="#0F6E56"><circle cx="5" cy="5" r="5"/></svg>
+    Engineering &amp; Technology Solutions
+  </div>
+  <h1>Foundational tech<br>that drives <span>powerful change</span></h1>
+  <p>From interlocking brick machines to electrical works and tech projects — we deliver modern engineering built on originality, reliability, and smart innovation.</p>
+  <div class="hero-btns">
+    <button class="btn-primary" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})">Explore our services</button>
+    <button class="btn-secondary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Contact us</button>
+  </div>
+</section>
+
+<div class="stats">
+  <div class="stat"><div class="stat-num">3+</div><div class="stat-label">Core service domains</div></div>
+  <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Commitment to quality</div></div>
+  <div class="stat"><div class="stat-num">Any scale</div><div class="stat-label">Small to large industrial</div></div>
+</div>
+
+<section class="section" id="services">
+  <div class="section-label">What we do</div>
+  <div class="section-title">Comprehensive engineering services</div>
+  <div class="section-sub">We operate across multiple domains, offering tailored solutions that bridge traditional engineering with advanced technology.</div>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon" style="background:#E1F5EE">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0F6E56" stroke-width="1.5" stroke-linecap="round"><rect x="2" y="8" width="20" height="14" rx="2"/><rect x="6" y="4" width="4" height="4" rx="1"/><rect x="14" y="4" width="4" height="4" rx="1"/><line x1="8" y1="8" x2="8" y2="22"/><line x1="16" y1="8" x2="16" y2="22"/><line x1="2" y1="15" x2="22" y2="15"/></svg>
+      </div>
+      <div class="tag">Machine Sales</div>
+      <h3>Interlocking brick machines</h3>
+      <p>Sales and comprehensive servicing of interlocking brick machines for construction projects of all scales. Durable, cost-effective, and backed by expert support.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon" style="background:#E6F1FB">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#185FA5" stroke-width="1.5" stroke-linecap="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+      </div>
+      <div class="tag" style="background:#E6F1FB;color:#185FA5">Electrical</div>
+      <h3>Electrical works</h3>
+      <p>Professional electrical installations, maintenance, and consulting. We ensure safety, efficiency, and compliance for residential, commercial, and industrial setups.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon" style="background:#EEEDFE">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#534AB7" stroke-width="1.5" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9l6 6M15 9l-6 6"/></svg>
+      </div>
+      <div class="tag" style="background:#EEEDFE;color:#534AB7">Tech Projects</div>
+      <h3>Tech-based project development</h3>
+      <p>End-to-end development of technology-driven projects. From automation to smart engineering systems, we build innovative solutions tailored to your needs.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon" style="background:#FAEEDA">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#854F0B" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+      </div>
+      <div class="tag" style="background:#FAEEDA;color:#854F0B">Consulting</div>
+      <h3>Engineering consultancy</h3>
+      <p>Expert guidance on construction, automation, and technical projects. We help businesses make smart, sustainable decisions backed by engineering insight.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-alt" id="about">
+  <div class="split">
+    <div>
+      <div class="section-label">About us</div>
+      <div class="section-title">Where originality meets tectonic force</div>
+      <div class="section-sub">The name says it all — "Virgin" for fresh thinking, "Techtonic" for transformative power. We're built to create foundational technological change across engineering and construction.</div>
+      <div class="why-grid">
+        <div class="why-item">
+          <div class="why-dot"></div>
+          <div>
+            <h4>Innovation-first</h4>
+            <p>We constantly explore new ideas and modern tools to stay ahead.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="why-dot"></div>
+          <div>
+            <h4>Sustainability</h4>
+            <p>Long-term durability and smart, eco-conscious solutions.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="why-dot"></div>
+          <div>
+            <h4>Customized delivery</h4>
+            <p>Tailored to your scale — small business or large industrial setup.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="why-dot"></div>
+          <div>
+            <h4>Cost-effective</h4>
+            <p>Efficient outcomes that maximize value without compromise.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="visual-block">
+      <div class="mini-card"><div class="mc-val">Multi</div><div class="mc-label">Domain expertise</div></div>
+      <div class="mini-card"><div class="mc-val">Smart</div><div class="mc-label">Automation solutions</div></div>
+      <div class="mini-card"><div class="mc-val">Trusted</div><div class="mc-label">Partner brand</div></div>
+      <div class="mini-card"><div class="mc-val">Full</div><div class="mc-label">Project lifecycle</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="process">
+  <div class="split">
+    <div class="process-steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-line"></div>
+        <div class="step-content">
+          <h4>Consultation &amp; discovery</h4>
+          <p>We start by understanding your specific requirements, project goals, and constraints.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-line"></div>
+        <div class="step-content">
+          <h4>Solution design</h4>
+          <p>Our engineers craft a customized plan integrating the right technology and methods.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-line"></div>
+        <div class="step-content">
+          <h4>Implementation</h4>
+          <p>Skilled execution with a focus on quality, safety, and timeline adherence.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-line"></div>
+        <div class="step-content">
+          <h4>Support &amp; maintenance</h4>
+          <p>Ongoing support to ensure systems run reliably long after project completion.</p>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="section-label">How we work</div>
+      <div class="section-title">A process built around your success</div>
+      <div class="section-sub">From first conversation to final handover, every step is intentional. We integrate innovation with practical implementation for efficient, lasting outcomes.</div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-section">
+  <h2>Ready to build something foundational?</h2>
+  <p>Whether you're a small business or a large industrial operation, we have the expertise to deliver results.</p>
+  <button class="btn-white" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Start a conversation</button>
+</div>
+
+<section class="section" id="contact">
+  <div class="section-label">Get in touch</div>
+  <div class="section-title">Let's talk about your project</div>
+  <div class="contact-grid">
+    <div class="contact-info">
+      <div class="contact-item">
+        <div class="contact-icon">📍</div>
+        <div>
+          <h4>Location</h4>
+          <p>Available across regions — serving clients from small-scale to industrial scale</p>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">📞</div>
+        <div>
+          <h4>Phone</h4>
+          <p>Reach us directly for quotes and consultations</p>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">✉️</div>
+        <div>
+          <h4>Email</h4>
+          <p>info@virgintechtonicsystems.com</p>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">🕐</div>
+        <div>
+          <h4>Availability</h4>
+          <p>Monday – Saturday, 9am – 6pm</p>
+        </div>
+      </div>
+    </div>
+    <div class="form-area">
+      <div class="form-row">
+        <input type="text" placeholder="Your name">
+        <input type="email" placeholder="Email address">
+      </div>
+      <select style="width:100%;background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-md);padding:10px 12px;font-size:13px;color:var(--color-text-primary);font-family:var(--font-sans);outline:none;margin-bottom:0.75rem;appearance:none">
+        <option value="">Select a service...</option>
+        <option>Interlocking brick machines</option>
+        <option>Electrical works</option>
+        <option>Tech project development</option>
+        <option>Engineering consultancy</option>
+      </select>
+      <textarea placeholder="Tell us about your project or requirements..."></textarea>
+      <button class="btn-primary" style="width:100%;padding:12px" onclick="this.textContent='Message sent!';this.style.background='#085041';setTimeout(()=>{this.textContent='Send message';this.style.background='#1D9E75'},2500)">Send message</button>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div>
+    <div style="font-size:13px;font-weight:500">Virgin Techtonic Systems</div>
+    <p style="margin-top:4px">© 2025 All rights reserved.</p>
+  </div>
+  <div class="footer-links">
+    <a href="#">Privacy</a>
+    <a href="#">Terms</a>
+    <a href="#">Services</a>
+    <a href="#">Contact</a>
+  </div>
+</footer>
+
+<script>
+function scrollTo(id){document.getElementById(id).scrollIntoView({behavior:'smooth'})}
+</script>
