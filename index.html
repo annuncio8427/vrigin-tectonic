@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Virgin Techtonic Systems</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="logo">
+    <div class="logo-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2">
+        <polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5"/>
+      </svg>
+    </div>
+    <div>
+      <div class="logo-text">Virgin Techtonic Systems</div>
+      <div class="logo-sub">Engineering the Future</div>
+    </div>
+  </div>
+
+  <div class="nav-links">
+    <a onclick="scrollToSection('services')">Services</a>
+    <a onclick="scrollToSection('about')">About</a>
+    <a onclick="scrollToSection('process')">Process</a>
+    <a onclick="scrollToSection('contact')">Contact</a>
+  </div>
+
+  <button class="nav-cta" onclick="scrollToSection('contact')">Get a Quote</button>
+</nav>
+
+<section class="hero">
+  <h1>Foundational tech that drives <span>powerful change</span></h1>
+  <p>Engineering, machines, electrical works & tech projects.</p>
+  <button class="btn-primary" onclick="scrollToSection('services')">Explore</button>
+</section>
+
+<section id="services" class="section">
+  <h2>Services</h2>
+  <div class="services-grid">
+    <div class="service-card">Interlocking Machines</div>
+    <div class="service-card">Electrical Works</div>
+    <div class="service-card">Tech Projects</div>
+    <div class="service-card">Consulting</div>
+  </div>
+</section>
+
+<section id="contact" class="section">
+  <h2>Contact</h2>
+  <input type="text" placeholder="Your Name">
+  <input type="email" placeholder="Email">
+  <textarea placeholder="Message"></textarea>
+  <button onclick="sendMessage(this)">Send</button>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
