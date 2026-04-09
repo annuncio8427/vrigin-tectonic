@@ -36,6 +36,9 @@ themeToggle?.addEventListener('click', () => {
 });
 
 window.addEventListener('scroll', () => {
+  if (!scrollProgress) {
+    return;
+  }
   const scrollTop = window.scrollY;
   const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
   const width = maxScroll > 0 ? (scrollTop / maxScroll) * 100 : 0;
