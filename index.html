@@ -1,59 +1,236 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Virgin Techtonic Systems</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Virgin Techtonic Systems delivers interlocking brick machines, electrical works, and innovative tech-powered engineering solutions."
+    />
+    <title>Virgin Techtonic Systems | Engineering the Future</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="scroll-progress" id="scrollProgress"></div>
 
-<nav class="nav">
-  <div class="logo">
-    <div class="logo-icon">
-      <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2">
-        <polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5"/>
-      </svg>
-    </div>
-    <div>
-      <div class="logo-text">Virgin Techtonic Systems</div>
-      <div class="logo-sub">Engineering the Future</div>
-    </div>
-  </div>
+    <header class="site-header" id="top">
+      <nav class="navbar container" aria-label="Main navigation">
+        <a class="brand" href="#top" aria-label="Virgin Techtonic Systems home">
+          <span class="brand-mark" aria-hidden="true">VTS</span>
+          <span class="brand-text">
+            <strong>Virgin Techtonic Systems</strong>
+            <small>Technology & Engineering</small>
+          </span>
+        </a>
 
-  <div class="nav-links">
-    <a onclick="scrollToSection('services')">Services</a>
-    <a onclick="scrollToSection('about')">About</a>
-    <a onclick="scrollToSection('process')">Process</a>
-    <a onclick="scrollToSection('contact')">Contact</a>
-  </div>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
 
-  <button class="nav-cta" onclick="scrollToSection('contact')">Get a Quote</button>
-</nav>
+        <div class="nav-group" id="navGroup">
+          <a href="#about">About</a>
+          <a href="about.html">Company Page</a>
+          <a href="#services">Services</a>
+          <a href="#why-us">Why Us</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+          <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark and light theme">◐</button>
+          <a href="#contact" class="btn btn-nav">Get Quote</a>
+        </div>
+      </nav>
+    </header>
 
-<section class="hero">
-  <h1>Foundational tech that drives <span>powerful change</span></h1>
-  <p>Engineering, machines, electrical works & tech projects.</p>
-  <button class="btn-primary" onclick="scrollToSection('services')">Explore</button>
-</section>
+    <main>
+      <section class="hero section">
+        <div class="hero-bg" aria-hidden="true"></div>
+        <div class="container hero-content reveal">
+          <p class="eyebrow">Premium Engineering • Smart Infrastructure • Trusted Delivery</p>
+          <h1>Engineering the Future with Smart Technology</h1>
+          <p class="lead">
+            We combine precision machines, elite electrical expertise, and innovation-led engineering to build reliable
+            systems that drive business growth.
+          </p>
+          <div class="hero-actions">
+            <a href="#contact" class="btn btn-primary">Get Quote</a>
+            <a href="#contact" class="btn btn-secondary">Contact Us</a>
+          </div>
+        </div>
+      </section>
 
-<section id="services" class="section">
-  <h2>Services</h2>
-  <div class="services-grid">
-    <div class="service-card">Interlocking Machines</div>
-    <div class="service-card">Electrical Works</div>
-    <div class="service-card">Tech Projects</div>
-    <div class="service-card">Consulting</div>
-  </div>
-</section>
+      <section class="section" id="about">
+        <div class="container split reveal">
+          <div>
+            <p class="eyebrow">About Virgin Techtonic Systems</p>
+            <h2>Built by engineers. Trusted by builders.</h2>
+            <p>
+              Virgin Techtonic Systems is a forward-thinking technology and engineering company focused on high-output
+              interlocking brick machine solutions, precision electrical works, and modern tech-powered systems.
+            </p>
+            <p>
+              Our team blends field-tested engineering with digital innovation to help developers, manufacturers, and
+              institutions achieve safe, scalable, and future-ready operations.
+            </p>
+            <a href="about.html" class="btn btn-secondary">Read Full Company Story</a>
+          </div>
+          <div class="mini-grid">
+            <article class="glass-card mini-card">
+              <h3>Mission</h3>
+              <p>Deliver smarter industrial solutions that improve productivity, quality, and long-term value.</p>
+            </article>
+            <article class="glass-card mini-card">
+              <h3>Vision</h3>
+              <p>Lead Africa’s transition into intelligent, sustainable, and technology-driven infrastructure.</p>
+            </article>
+          </div>
+        </div>
+      </section>
 
-<section id="contact" class="section">
-  <h2>Contact</h2>
-  <input type="text" placeholder="Your Name">
-  <input type="email" placeholder="Email">
-  <textarea placeholder="Message"></textarea>
-  <button onclick="sendMessage(this)">Send</button>
-</section>
+      <section class="section" id="services">
+        <div class="container reveal">
+          <p class="eyebrow">Our Core Services</p>
+          <h2>Engineered solutions with premium execution</h2>
+          <div class="card-grid">
+            <article class="glass-card service-card">
+              <span class="service-icon" aria-hidden="true">🧱</span>
+              <h3>Interlocking Brick Machines</h3>
+              <p>Sales, installation, maintenance, operator training, and performance optimization.</p>
+            </article>
+            <article class="glass-card service-card">
+              <span class="service-icon" aria-hidden="true">⚡</span>
+              <h3>Electrical Works</h3>
+              <p>Commercial and industrial electrical design, panel setup, rewiring, and safety audits.</p>
+            </article>
+            <article class="glass-card service-card">
+              <span class="service-icon" aria-hidden="true">🛰️</span>
+              <h3>Tech-Based Projects</h3>
+              <p>Automation, IoT integration, control systems, and digital solutions for modern operations.</p>
+            </article>
+          </div>
+        </div>
+      </section>
 
-<script src="script.js"></script>
-</body>
+      <section class="section" id="why-us">
+        <div class="container reveal">
+          <p class="eyebrow">Why Choose Us</p>
+          <h2>Reliable partnership. Premium quality. Tangible outcomes.</h2>
+          <div class="why-grid">
+            <article class="glass-card why-card">
+              <h3>Trusted Delivery</h3>
+              <p>From concept to commissioning, every phase is tracked, transparent, and quality-assured.</p>
+            </article>
+            <article class="glass-card why-card">
+              <h3>Innovation-First</h3>
+              <p>We apply modern engineering and smart technologies to reduce downtime and increase ROI.</p>
+            </article>
+            <article class="glass-card why-card">
+              <h3>Expert Team</h3>
+              <p>Certified technicians and engineers with deep industry experience across multiple sectors.</p>
+            </article>
+          </div>
+          <div class="stats">
+            <article class="glass-card stat-card">
+              <h3><span class="counter" data-target="120">0</span>+</h3>
+              <p>Projects Completed</p>
+            </article>
+            <article class="glass-card stat-card">
+              <h3><span class="counter" data-target="98">0</span>%</h3>
+              <p>Client Satisfaction</p>
+            </article>
+            <article class="glass-card stat-card">
+              <h3><span class="counter" data-target="15">0</span>+</h3>
+              <p>Years Combined Expertise</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="projects">
+        <div class="container reveal">
+          <p class="eyebrow">Portfolio</p>
+          <h2>Selected projects and case highlights</h2>
+          <div class="project-grid">
+            <article class="project-tile">
+              <h3>High-Capacity Brick Plant Setup</h3>
+              <p>Installed and commissioned an interlocking machine line for a regional housing developer.</p>
+            </article>
+            <article class="project-tile">
+              <h3>Industrial Power Upgrade</h3>
+              <p>Re-engineered electrical distribution systems to support 24/7 production environments.</p>
+            </article>
+            <article class="project-tile">
+              <h3>Smart Monitoring Deployment</h3>
+              <p>Integrated sensor-driven dashboards for predictive maintenance and reporting.</p>
+            </article>
+            <article class="project-tile">
+              <h3>Automation Retrofit Project</h3>
+              <p>Upgraded legacy operations with efficient control systems and secure integrations.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="contact">
+        <div class="container split reveal">
+          <div>
+            <p class="eyebrow">Contact Us</p>
+            <h2>Let’s build your next high-impact project.</h2>
+            <p>Tell us about your requirements and we’ll provide a tailored engineering proposal.</p>
+            <a class="whatsapp" href="https://wa.me/2340000000000" target="_blank" rel="noopener noreferrer">
+              WhatsApp Quick Contact ↗
+            </a>
+          </div>
+
+          <form class="glass-card contact-form" id="contactForm">
+            <div class="field">
+              <input id="name" name="name" type="text" required />
+              <label for="name">Your Name</label>
+            </div>
+            <div class="field">
+              <input id="email" name="email" type="email" required />
+              <label for="email">Email Address</label>
+            </div>
+            <div class="field">
+              <input id="company" name="company" type="text" required />
+              <label for="company">Company</label>
+            </div>
+            <div class="field">
+              <textarea id="message" name="message" rows="4" required></textarea>
+              <label for="message">Project Details</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Send Message</button>
+            <p id="formStatus" class="form-status" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-wrap">
+        <div>
+          <strong>Virgin Techtonic Systems</strong>
+          <p>Interlocking machine solutions, electrical works, and innovative engineering technology.</p>
+        </div>
+        <div class="footer-links">
+          <a href="#about">About</a>
+          <a href="about.html">Company Page</a>
+          <a href="#services">Services</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div>
+          <p>Email: info@virgintechtonic.com</p>
+          <p>Phone: +234 000 000 0000</p>
+          <p>© <span id="year"></span> Virgin Techtonic Systems</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
 </html>
