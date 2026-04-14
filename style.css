@@ -287,6 +287,16 @@ p {
   transition: transform 0.28s ease, border-color 0.28s ease;
 }
 
+.service-link {
+  display: block;
+}
+
+.service-link:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+  border-radius: 1rem;
+}
+
 .service-card:hover,
 .project-tile:hover {
   transform: translateY(-6px);
